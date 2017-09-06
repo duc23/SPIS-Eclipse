@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+<style>
+body, html {
+    background-image: url("static/img/eclipse.jpg");
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    color:white;
+    font-family: "Courier New", Courier, monospace;
+    font-size: 25px;
+}
+
+hr {
+    margin: auto;
+    width: 40%;
+}
+
+p {
+    font-family: "Courier New", Courier, monospace;
+    text-shadow: 2px 2px #1b1b1b;
+    color: white;
+}
+</style>
+  <head>
+     <meta charset="utf-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+     <!-- The above meta tag *must* come first in the head; any other head content must come *after* these tags -->
+     
+     <!-- Bootstrap -->
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+     
+     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+     <title> {% block title %}{% endblock %} - My Webpage</title>
+   </head>
+
+    <body>
+    <div id="content">{% block content %}{% endblock %}</div>
+    <p style="font-size: 15px; position: absolute; bottom: 0; left: 16px">Background credits to <a href= "https://www.hdwallpapers.in/solar_eclipse-wallpapers.html" style="color:white">HDWallpapers.in</a>
+    <p>
+
+    <p style="font-size: 15px; position: absolute; bottom: 0; right: 16px"> Duc Stephen & Co</p>
+     
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+   
+  </body>
