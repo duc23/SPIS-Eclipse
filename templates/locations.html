@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+{%  block title %}Locations{%  endblock %}
+
+{% block content %}
+<div style="text-align: left; position: absolute; top: 40%; left: 45%; transform: translate(-50%,-50%); text-shadow: 2px 2px #1b1b1b">
+<h1><u>Choose a Location:</u></h1>
+<br>
+
+<form action="/result">
+	<p><input type="radio" value="eastcoast" name="location"> East Coast</p>
+	<p><input type="radio" value="mexico" name="location"> Mexico</p>
+	<input type="submit" value="SUBMIT" style="background-color: black">
+</form>
+</div>
+{% endblock %}

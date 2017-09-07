@@ -12,6 +12,36 @@ body, html {
     font-size: 25px;
 }
 
+body .boxed{
+    border: 100px black;
+}
+
+h1 {
+    font-size:30px;
+    font-family: "Courier New", Courier, monospace;
+    text-shadow: 2px 2px #1b1b1b;
+    color: white;
+    overflow: hidden; /* Ensures the content is not revealed until the animation */
+    border-right: .15em solid white; /* The typwriter cursor */
+    white-space: nowrap; /* Keeps the content on a single line */
+    margin: 0 auto; /* Gives a scrolling effect (smooth) as the typing happens */
+    letter-spacing: .15em; /* Adjust as needed */
+    animation: 
+      typing 1.75s steps(30, end), /*The speed and smoothness of how the text is displayed */
+      blink-caret 1.21s step-end forwards;
+}
+
+@keyframes typing {
+  from { width: 0 }  /* Where the typing effect would start */
+  to { width: 100% } /* WHere the typing effect would end */ 
+}
+
+
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: white }    /*Allows blinking to occur in-between characters and at the end */ 
+}
+
 hr {
     margin: auto;
     width: 40%;
@@ -37,12 +67,13 @@ p {
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
      
      <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-     <title> {% block title %}{% endblock %} - My Webpage</title>
+     <title> {% block title %}{% endblock %} - SPIS ECLIPSE 2024</title>
    </head>
 
     <body>
+    {% include "navbar.html" %}
     <div id="content">{% block content %}{% endblock %}</div>
-    <p style="font-size: 15px; position: absolute; bottom: 0; left: 16px">Background credits to <a href= "https://www.hdwallpapers.in/solar_eclipse-wallpapers.html" style="color:white">HDWallpapers.in</a>
+    <p style="font-size: 15px; position: absolute; bottom: 0; left: 16px">Background credits to <a href= "https://www.hdwallpapers.in/solar_eclipse-wallpapers.html" target="_blank" style="color:white">HDWallpapers.in</a>
     <p>
 
     <p style="font-size: 15px; position: absolute; bottom: 0; right: 16px"> Duc Stephen & Co</p>
