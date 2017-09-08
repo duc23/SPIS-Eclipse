@@ -1,40 +1,31 @@
 {% extends "layout.html" %}
-{%  block title %}Canada{%  endblock %}
+{%  block title %}Mexico{%  endblock %}
 
 {% block content %}
-<div style="text-align: center; font-size:30px; position: absolute; top: 45%; left: 50%; transform: translate(-50%,-50%)">
-<h1><u>CANADA</u></h1>
-<div id="map"></div>
-    <script>
+<div style="text-align: center; position: absolute">
+<h1><font size="7" >Welcome to Canada!</font></h1>
+<p style="margin: auto" id="map"></p>
+<script>
       function initMap() {
-      	var canada = {lat: 54.062, lng: -101.079};
-        var leamington = {lat: 42.093, lng: -82.556};
-        var hamilton = {lat: 43.233, lng: -79.933};
         var niagara = {lat: 43.079, lng: -79.082};
-        var cornwall = {lat: 45.029, lng: -74.744};
-        var kingston = {lat: 44.293, lng: -76.511};
+        var gander = {lat: 48.951, lng: -54.611};
+        var montreal = {lat: 45.47, lng: -73.612};
+
         var map = new google.maps.Map(document.getElementById('map'), {
-          zoom: 3,
-          center: canada
+          zoom: 4,
+          center: montreal
         });
+
         var marker = new google.maps.Marker({
-          position: hamilton,
+          position: montreal,
           map: map
         });
         var marker = new google.maps.Marker({
-          position: leamington,
+          position: gander,
           map: map
         });
         var marker = new google.maps.Marker({
           position: niagara,
-          map: map
-        });
-        var marker = new google.maps.Marker({
-          position: cornwall,
-          map: map
-        });
-        var marker = new google.maps.Marker({
-          position: kingston,
           map: map
         });
       }
@@ -42,5 +33,26 @@
     <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCzaxeEp_qRoaZn4c1jL4UDQREGAAK98Sc&callback=initMap">
     </script>
+
+<h3>Below is a list of the best locations that offer the best scenery for the eclipse!</h3>
+
+<h4><strong> Montreal, Quebec </strong></h4>
+<img src="http://surfaceid.com/wp-content/uploads/2016/10/montreal-skyline-from.jpg" alt="Montreal" style="width:415px;height:230px">
+
+<p><font size="2">Did you know that more than 85% of the world’s maple syrup comes from Quebec and many of the maple treats that are produced came from Montreal? In addition, during the spring time many people would gather to Montreal to enjoy these snacks in a period that is called <i>Temps des Sucres</i> (sugaring-off time). Perfect timing to enjoy authentic maple treats and watch the eclipse! Aside from maple treats, there are many others activity to enjoy in Montreal like going to the Underground City and going to second largest Amusement Park in Canada. </font></p>
+<br />
+
+<h4> <strong>Niagara Falls, Ontario </strong> </h4>
+<img src="https://upload.wikimedia.org/wikipedia/commons/7/72/Niagara_Falls_Skyline.jpg" alt="Niagara Falls" style="width:415px;height:230px">
+
+<p><font size="2">Would you like to experience the wonders of the iconic water falls that straddle between the international border of Canada and the United States? Collectively known as the Niagara Falls, the Horseshoe Falls, the American Falls, and the Bridal Veil is notable for its beauty and valuable source of hydroelectric power. Therefore, if you would like to experience the eclispe and the falls simultaneously then come to Niagara Falls!</font></p>
+<br />
+
+
+<h4><strong> Gander, Newfoundland Island </strong></h4>
+<img src="https://melodywren.files.wordpress.com/2012/11/twillingate-harbor-best-shot.jpg" alt="Gander" style="width:415px;height:230px">
+
+<p><font size="2"> Gander is a small town that have a population of more than 11,000. Though it does not have prominent features like other provinces in Canada, it does have pleasant places to watch the elcipse such as the Cobbs Pond Rotary Park and Gander Heritage Memorial Park.  </font></p>
+<br>
 </div>
 {% endblock %}
