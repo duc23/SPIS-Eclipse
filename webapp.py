@@ -1,7 +1,7 @@
 from flask import Flask, redirect, url_for, session, request, jsonify
 from flask_oauthlib.client import OAuth
 from flask import render_template, flash, Markup
-
+from flask_pymongo import PyMongo
 from github import Github
 
 import pprint
@@ -42,6 +42,13 @@ github = oauth.remote_app(
     access_token_url='https://github.com/login/oauth/access_token',
     authorize_url='https://github.com/login/oauth/authorize'
 )
+
+app.config['MONGO_HOST'] = os.environ['MONGO_HOST']
+app.config['MONGO_PORT'] = int(os.environ['MONGO_PORT'])
+app.config['MONGO_DBNAME'] = os.environ['MONGO_DBNAME']
+app.config['MONGO_USERNAME'] = os.environ['MONGO_USERNAME']
+app.config['MONGO_PASSWORD'] = os.environ['MONGO_PASSWORD']
+mongo = PyMongo(app)
 
 @github.tokengetter
 def get_github_oauth_token():
@@ -133,22 +140,40 @@ def locations():
 
 @app.route('/result')
 def result():
-    var1=request.args['location']
-    if var1 == "eastcoast":
-        return redirect(url_for('eastcoast'))
-    else:
+    var=request.args['location']
+    if var == "unitedstates":
+        return redirect(url_for('unitedstates'))
+    elif var == "mexico":
         return redirect(url_for('mexico'))
+    elif var == "canada":
+        return redirect(url_for('canada'))
 
-@app.route('/eastcoast')
-def eastcoast():
-    return render_template('eastcoast.html')
+@app.route('/unitedstates')
+def unitedstates():
+    return render_template('unitedstates.html')
 
 @app.route('/mexico')
 def mexico():
     return render_template('mexico.html')
 
+@app.route('/canada')
+def canada():
+    return render_template('canada.html')
 
-    
+@app.route('/news')
+def news():
+    return render_template('news.html')
+
+
+@app.route('/email_result')
+def email_result():
+    user_email = request.args["email"]
+    mongo.db.eclipsenews.insert_one( {"email" : user_email })
+    return redirect(url_for('finish'))
+
+@app.route('/finish')
+def finish():
+    return render_template('finish.html')
 
 
 
