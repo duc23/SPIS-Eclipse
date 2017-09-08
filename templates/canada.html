@@ -1,0 +1,46 @@
+{% extends "layout.html" %}
+{%  block title %}Canada{%  endblock %}
+
+{% block content %}
+<div style="text-align: center; font-size:30px; position: absolute; top: 45%; left: 50%; transform: translate(-50%,-50%)">
+<h1><u>CANADA</u></h1>
+<div id="map"></div>
+    <script>
+      function initMap() {
+      	var canada = {lat: 54.062, lng: -101.079};
+        var leamington = {lat: 42.093, lng: -82.556};
+        var hamilton = {lat: 43.233, lng: -79.933};
+        var niagara = {lat: 43.079, lng: -79.082};
+        var cornwall = {lat: 45.029, lng: -74.744};
+        var kingston = {lat: 44.293, lng: -76.511};
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 3,
+          center: canada
+        });
+        var marker = new google.maps.Marker({
+          position: hamilton,
+          map: map
+        });
+        var marker = new google.maps.Marker({
+          position: leamington,
+          map: map
+        });
+        var marker = new google.maps.Marker({
+          position: niagara,
+          map: map
+        });
+        var marker = new google.maps.Marker({
+          position: cornwall,
+          map: map
+        });
+        var marker = new google.maps.Marker({
+          position: kingston,
+          map: map
+        });
+      }
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCzaxeEp_qRoaZn4c1jL4UDQREGAAK98Sc&callback=initMap">
+    </script>
+</div>
+{% endblock %}

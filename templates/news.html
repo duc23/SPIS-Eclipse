@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+{%  block title %}News{%  endblock %}
+
+{% block content %}
+<div style="text-align: left; position: absolute; top: 40%; left: 45%; transform: translate(-50%,-50%); text-shadow: 2px 2px #1b1b1b">
+	<h1><u>News</u></h1>
+	<br>
+	<p style="font-size: 15px">Enter your email to subscribe to our Eclipse Newsletters and be up to date to all the latest news:</p>
+	<br>
+	<form action='/email_result'>
+		<p style="display:inline; color:black"><input style="width: 300px" type="text" id="email" name="email" placeholder="Your email..."></p>
+		<p style="display:inline"><input type="submit" value="SUBMIT" style="background-color: black"></p>
+	</form>
+</div>
+{% endblock %}

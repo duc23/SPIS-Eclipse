@@ -2,13 +2,16 @@
 {%  block title %}Locations{%  endblock %}
 
 {% block content %}
-<div style="text-align: left; position: absolute; top: 40%; left: 45%; transform: translate(-50%,-50%); text-shadow: 2px 2px #1b1b1b">
-<h1><u>Choose a Location:</u></h1>
+<div style="text-align: left; position: absolute; top: 40%; left: 30%; transform: translate(-25.5%,-50.5%); text-shadow: 2px 2px #1b1b1b">
+<h1><u>Locations</u></h1>
 <br>
-
+<p>This total eclipse will be visible across North America. Choose a country for more information on viewing areas:</p>
+<br>
 <form action="/result">
-	<p><input type="radio" value="eastcoast" name="location"> East Coast</p>
+	<p><input type="radio" value="unitedstates" name="location"> United States</p>
 	<p><input type="radio" value="mexico" name="location"> Mexico</p>
+	<p><input type="radio" value="canada" name="location"> Canada</p>
+	<br>
 	<input type="submit" value="SUBMIT" style="background-color: black">
 </form>
 </div>

@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+{%  block title %}United States{%  endblock %}
+
+{% block content %}
+<p>UNITED STATES</p>
+<div id="map"></div>
+    <script>
+      function initMap() {
+      	var canada = {lat: 54.062, lng: -101.079};
+        var leamington = {lat: 42.093, lng: -82.556};
+        var hamilton = {lat: 43.233, lng: -79.933};
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 3,
+          center: canada
+        });
+        var marker = new google.maps.Marker({
+          position: leamington, hamilton,
+          map: map
+        });
+      }
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCzaxeEp_qRoaZn4c1jL4UDQREGAAK98Sc&callback=initMap">
+    </script>
+  </div>
+{% endblock %}

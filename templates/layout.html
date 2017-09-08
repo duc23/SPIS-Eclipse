@@ -3,6 +3,8 @@
 <style>
 body, html {
     background-image: url("static/img/eclipse.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     height: 100%;
     background-position: center;
     background-size: cover;
@@ -11,6 +13,17 @@ body, html {
     font-family: "Courier New", Courier, monospace;
     font-size: 25px;
 }
+
+.courier {
+    font-family: "Courier New", Courier, monospace;
+}
+
+#map {
+    height: 300px;
+    width: 500px;
+    background-color: grey;
+}
+
 
 body .boxed{
     border: 100px black;
@@ -73,10 +86,13 @@ p {
     <body>
     {% include "navbar.html" %}
     <div id="content">{% block content %}{% endblock %}</div>
-    <p style="font-size: 15px; position: absolute; bottom: 0; left: 16px">Background credits to <a href= "https://www.hdwallpapers.in/solar_eclipse-wallpapers.html" target="_blank" style="color:white">HDWallpapers.in</a>
-    <p>
 
-    <p style="font-size: 15px; position: absolute; bottom: 0; right: 16px"> Duc Stephen & Co</p>
+
+    <div style="font-size: 15px; position: fixed; bottom: 0px; left: 16px">Background credits to <a href= "https://www.hdwallpapers.in/solar_eclipse-wallpapers.html" target="_blank" style="color:white">HDWallpapers.in</a></div>
+
+    <div>
+    <p style="font-size: 15px; position: fixed; bottom: 0px; right: 16px"> Duc Stephen & Co</p>
+    </div>
      
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
