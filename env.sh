@@ -2,3 +2,9 @@ export GITHUB_CLIENT_ID=3336bfe4c48931a3bfb7
 export GITHUB_CLIENT_SECRET=9b4fe56e3be42bc76c1aa203dab39db86443b853
 export GITHUB_ORG=ucsd-cse-spis-2017
 export APP_SECRET_KEY=iyrpot3nwc8uyhyer
+
+export MONGO_HOST=ds129374.mlab.com
+export MONGO_PORT=29374
+export MONGO_DBNAME=eclipsenews
+export MONGO_USERNAME=duser1
+export MONGO_PASSWORD=qwertyuiop
